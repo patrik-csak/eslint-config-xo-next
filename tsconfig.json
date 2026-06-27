@@ -1,0 +1,11 @@
+{
+	"extends": [
+		"@tsconfig/strictest/tsconfig.json",
+		"@tsconfig/node22/tsconfig.json"
+	],
+	"compilerOptions": {
+		"declaration": true,
+		"exactOptionalPropertyTypes": false
+	},
+	"files": ["index.ts"]
+}

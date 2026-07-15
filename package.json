@@ -2,24 +2,30 @@
 	"name": "eslint-config-xo-next",
 	"version": "0.1.0-0",
 	"description": "ESLint shareable config for using XO in Next.js projects",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/patrik-csak/eslint-config-xo-next.git"
-	},
 	"license": "MIT",
+	"repository": "github:patrik-csak/eslint-config-xo-next",
 	"author": "Patrik Csak <p@trikcsak.com> (https://patrikcsak.com)",
-	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"default": "./index.js",
-			"types": "./index.d.ts"
+			"types": "./index.d.ts",
+			"default": "./index.js"
 		}
 	},
-	"files": [
-		"index.d.ts",
-		"index.js"
-	],
+	"sideEffects": false,
+	"engines": {
+		"node": "22 - 24"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "^24"
+		},
+		"packageManager": {
+			"name": "npm",
+			"version": "^11.16"
+		}
+	},
 	"scripts": {
 		"build": "tsc",
 		"inspect": "eslint-config-inspector --config=index.js",
@@ -29,6 +35,17 @@
 		"test": "node --test",
 		"test:coverage": "npm run test -- --experimental-test-coverage"
 	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"eslint",
+		"next",
+		"next.js",
+		"react",
+		"xo"
+	],
 	"dependencies": {
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"globals": "^17.7.0",
@@ -43,9 +60,8 @@
 		"@types/eslint-plugin-jsx-a11y": "^6.10.1",
 		"@types/node": "^24.13.2",
 		"eslint": "^10.6.0",
-		"eslint-config-xo": "^0.57.0",
+		"eslint-config-xo": "^0.58.0",
 		"eslint-config-xo-react": "^0.31.0",
-		"eslint-plugin-package-json": "^1.5.0",
 		"typescript": "^6.0.3"
 	},
 	"peerDependencies": {
@@ -56,19 +72,6 @@
 	"peerDependenciesMeta": {
 		"eslint-config-xo-react": {
 			"optional": true
-		}
-	},
-	"engines": {
-		"node": "22 - 24"
-	},
-	"devEngines": {
-		"runtime": {
-			"name": "node",
-			"version": "^24"
-		},
-		"packageManager": {
-			"name": "npm",
-			"version": "^11.16"
 		}
 	},
 	"allowScripts": {

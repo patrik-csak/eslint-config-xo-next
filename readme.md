@@ -10,7 +10,7 @@ ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-confi
 
 ## Install
 
-`eslint-config-xo-next` requires you to install `@next/eslint-plugin-next` as a direct dependency so its version can be kept in sync with your app’s other Next.js dependencies
+`eslint-config-xo-next` requires you to install `@next/eslint-plugin-next` as a direct dependency so its version can be kept in sync with your app’s other Next.js dependencies, e.g. when running `npx @next/codemod upgrade`
 
 > [!NOTE]
 > `@eslint/compat` is necessary until `eslint-plugin-react` supports ESLint v10

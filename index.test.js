@@ -1,9 +1,10 @@
-/* eslint-disable
-	jsdoc/require-description,
-	jsdoc/require-param-description,
-	jsdoc/require-returns-description,
-	no-shadow,
-	-- Decrease strictness for test file
+/*
+eslint-disable
+jsdoc/require-description,
+jsdoc/require-param-description,
+jsdoc/require-returns-description,
+no-shadow,
+-- Decrease strictness for test file
 */
 import assert from 'node:assert';
 import {suite, test} from 'node:test';

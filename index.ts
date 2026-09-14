@@ -73,7 +73,7 @@ export default function eslintConfigXoNext(options?: Options): Linter.Config[] {
 	const config: Linter.Config[] = [
 		// Our own version of eslint-config-next's 'next' config object:
 		{
-			name: 'eslint-config-xo-next',
+			name: 'xo-next',
 
 			// Use next's files
 			files: ['**/*.{js,jsx,mjs,ts,tsx,mts,cts}'],

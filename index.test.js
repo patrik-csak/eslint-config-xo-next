@@ -13,7 +13,9 @@ import {ESLint} from 'eslint';
 import configXoReact from 'eslint-config-xo-react';
 import configXoNext from './index.js';
 
-/** @typedef {import('eslint').Linter} Linter */
+/**
+@typedef {import('eslint').Linter} Linter
+*/
 
 /**
  @param {string} code

@@ -81,6 +81,8 @@ export default function xoNext(options?: Options): Linter.Config[] {
 				// Omit next's a11y, import, react, and react-hooks rules to use xo-react's
 
 				...nextPlugin.configs[options?.config ?? 'core-web-vitals'].rules,
+
+				'n/file-extension-in-import': 'off',
 			},
 		},
 

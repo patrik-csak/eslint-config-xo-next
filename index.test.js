@@ -9,6 +9,7 @@ no-shadow,
 import assert from 'node:assert';
 import {suite, test} from 'node:test';
 import {ESLint} from 'eslint';
+import xo from 'eslint-config-xo';
 import xoReact from 'eslint-config-xo-react';
 import xoNext from './index.js';
 
@@ -52,7 +53,7 @@ const severity = {
  @returns {Linter.Config[]}
  */
 function config(options) {
-	return [...xoReact(), ...xoNext(options)];
+	return [...xo(), ...xoReact(), ...xoNext(options)];
 }
 
 suite('options validation', () => {
@@ -70,6 +71,18 @@ suite('options validation', () => {
 			);
 		});
 	}
+});
+
+suite('xo rules', () => {
+	test('file extensions in imports are not required', async () => {
+		const code = 'import index from "./index"';
+		const messages = await runEslint(code, config());
+
+		assert.ok(!hasMessage(messages, {
+			ruleId: 'n/file-extension-in-import',
+			severity: severity.error,
+		}));
+	});
 });
 
 suite('jsx-a11y-x rules', () => {

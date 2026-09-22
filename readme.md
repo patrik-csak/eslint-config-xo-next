@@ -94,4 +94,4 @@ const xoConfig = defineConfig([
 
 ### How is this different from [eslint-config-xo-nextjs](https://github.com/tusbar/eslint-config-xo-nextjs)?
 
-This config acts as a minimal compatibility layer between Next.js's and XO's configs instead of wrapping them. With this config, you install your own version of `@next/eslint-plugin-next` so that its version matches your project's `next` and `@next/*` dependencies, and you install your own versions of `eslint-config-xo` (or `xo`) and `eslint-config-xo-react` so that you can update them without waiting for this plugin to update them.
+This config acts as a minimal compatibility layer between Next.js's and XO's configs instead of wrapping them. With this config, you install your own version of `@next/eslint-plugin-next` so that its version matches your project's `next` and `@next/*` dependencies, and you install your own versions of `eslint-config-xo` (or `xo`) and `eslint-config-xo-react` so that you can update them without waiting for this config to update them.

@@ -5,7 +5,7 @@ ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-confi
 ## Features
 
 - Eliminates ESLint plugin and parser conflicts from using ESLint 10 with `eslint-config-next` and `eslint-config-xo-react`
-- Combines Next.js's [`@next/next`](https://nextjs.org/docs/app/api-reference/config/eslint#rules) rules with `eslint-config-xo-react`'s stricter `eslint-plugin-jsx-a11y-x`, `@eslint-react/eslint-plugin`, and `eslint-plugin-react-hooks` rules
+- Combines Next.js's [`@next/next`](https://nextjs.org/docs/app/api-reference/config/eslint#rules) rules with `eslint-config-xo-react`'s stricter [`eslint-plugin-jsx-a11y-x`](https://github.com/es-tooling/eslint-plugin-jsx-a11y-x), [`@eslint-react/eslint-plugin`](https://github.com/Rel1cx/eslint-react), and [`eslint-plugin-react-hooks`](https://github.com/react/react/tree/HEAD/packages/eslint-plugin-react-hooks) rules
 - Supports Tailwind CSS syntax
 
 ## Install

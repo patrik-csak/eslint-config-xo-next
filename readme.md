@@ -10,7 +10,11 @@ ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-confi
 ## Install
 
 ```sh
-npm install --save-dev @next/eslint-plugin-next eslint-config-xo-next
+npm install --save-dev \
+	@next/eslint-plugin-next \
+	eslint-config-xo \
+	eslint-config-xo-next \
+	eslint-config-xo-react
 ```
 
 `eslint-config-xo-next` requires you to install `@next/eslint-plugin-next` as a direct dependency so its version can be kept in sync with your app’s other Next.js dependencies
@@ -28,20 +32,6 @@ export default defineConfig([
 	...eslintConfigXo(),
 	...eslintConfigXoNext(),
 	...eslintConfigXoReact(),
-]);
-```
-
-### Use with [XO](https://github.com/xojs/xo)
-
-```js
-// xo.config.js
-import xoNext from 'eslint-config-xo-next';
-import xoReact from 'eslint-config-xo-react';
-import {defineConfig} from 'eslint/config';
-
-const xoConfig = defineConfig([
-	...xoNext(),
-	...xoReact(),
 ]);
 ```
 
@@ -66,4 +56,25 @@ Where to find your Next.js application if Next.js isn’t installed in your root
 
 ```js
 ...xoNext({rootDir: 'packages/my-app/'})
+```
+
+## Use with [XO](https://github.com/xojs/xo)
+
+```sh
+npm install --save-dev \
+	@next/eslint-plugin-next \
+	eslint-config-xo-next \
+	eslint-config-xo-react
+```
+
+```js
+// xo.config.js
+import xoNext from 'eslint-config-xo-next';
+import xoReact from 'eslint-config-xo-react';
+import {defineConfig} from 'eslint/config';
+
+const xoConfig = defineConfig([
+	...xoNext(),
+	...xoReact(),
+]);
 ```

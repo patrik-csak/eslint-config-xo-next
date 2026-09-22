@@ -80,13 +80,13 @@ npm install --save-dev \
 
 ```js
 // xo.config.js
-import xoNext from 'eslint-config-xo-next';
-import xoReact from 'eslint-config-xo-react';
+import eslintConfigXoNext from 'eslint-config-xo-next';
+import eslintConfigXoReact from 'eslint-config-xo-react';
 import {defineConfig} from 'eslint/config';
 
 const xoConfig = defineConfig([
-	...xoReact(),
-	...xoNext(),
+	...eslintConfigXoReact(),
+	...eslintConfigXoNext(),
 ]);
 ```
 

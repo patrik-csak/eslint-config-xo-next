@@ -52,7 +52,7 @@ const severity = {
  @returns {Linter.Config[]}
  */
 function config(options) {
-	return [...xoNext(options), ...xoReact()];
+	return [...xoReact(), ...xoNext(options)];
 }
 
 suite('options validation', () => {

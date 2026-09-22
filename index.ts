@@ -2,6 +2,7 @@ import nextPlugin from '@next/eslint-plugin-next';
 import {type Linter} from 'eslint';
 import globals from 'globals';
 import ow from 'ow';
+import {tailwind3, tailwind4} from 'tailwind-csstree';
 
 export type Options = {
 	/**
@@ -18,6 +19,11 @@ export type Options = {
 	@see {@link https://nextjs.org/docs/app/api-reference/config/eslint#specifying-a-root-directory-within-a-monorepo}
 	*/
 	rootDir?: string | string[];
+
+	/**
+	Enable Tailwind CSS v3 or v4 syntax
+	*/
+	tailwind?: 3 | 4;
 };
 
 export default function xoNext(options?: Options): Linter.Config[] {
@@ -27,6 +33,7 @@ export default function xoNext(options?: Options): Linter.Config[] {
 			config: ow.optional.string.oneOf(['core-web-vitals', 'recommended']),
 			// eslint-disable-next-line unicorn/max-nested-calls
 			rootDir: ow.optional.any(ow.string, ow.array.ofType(ow.string)),
+			tailwind: ow.optional.number.oneOf([3, 4]),
 		}),
 	);
 
@@ -93,6 +100,16 @@ export default function xoNext(options?: Options): Linter.Config[] {
 			ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
 		},
 	];
+
+	if (options?.tailwind !== undefined) {
+		config.push({
+			name: 'xo-next/tailwind',
+			files: ['**/*.css'],
+			languageOptions: {
+				customSyntax: options.tailwind === 3 ? tailwind3 : tailwind4,
+			},
+		});
+	}
 
 	return config;
 }

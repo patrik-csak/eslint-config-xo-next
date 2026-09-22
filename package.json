@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-xo-next",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "ESLint shareable config for Next.js to be used with eslint-config-xo-react",
 	"license": "MIT",
 	"repository": "github:patrik-csak/eslint-config-xo-next",

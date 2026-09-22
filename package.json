@@ -47,27 +47,24 @@
 		"xo"
 	],
 	"dependencies": {
-		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"globals": "^17.7.0",
 		"ow": "^3.1.1"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^2.1.0",
 		"@eslint/config-inspector": "^3.0.4",
 		"@next/eslint-plugin-next": "^16.2.10",
 		"@tsconfig/node22": "^22.0.5",
 		"@tsconfig/strictest": "^2.0.8",
-		"@types/eslint-plugin-jsx-a11y": "^6.10.1",
 		"@types/node": "^24.13.2",
 		"eslint": "^10.6.0",
 		"eslint-config-xo": "^4.0.0",
-		"eslint-config-xo-react": "^0.31.0",
+		"eslint-config-xo-react": "^0.32.0",
 		"typescript": "^6.0.3"
 	},
 	"peerDependencies": {
 		"@next/eslint-plugin-next": "^16.0.0",
 		"eslint": "^10.0.0",
-		"eslint-config-xo-react": "0.30 - 0.31"
+		"eslint-config-xo-react": "^0.32.0"
 	},
 	"peerDependenciesMeta": {
 		"eslint-config-xo-react": {

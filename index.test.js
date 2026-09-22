@@ -8,10 +8,9 @@ no-shadow,
 */
 import assert from 'node:assert';
 import {suite, test} from 'node:test';
-import {fixupConfigRules} from '@eslint/compat';
 import {ESLint} from 'eslint';
-import configXoReact from 'eslint-config-xo-react';
-import configXoNext from './index.js';
+import xoReact from 'eslint-config-xo-react';
+import xoNext from './index.js';
 
 /**
 @typedef {import('eslint').Linter} Linter
@@ -53,20 +52,19 @@ const severity = {
  @returns {Linter.Config[]}
  */
 function config(options) {
-	return [...configXoNext(options), ...fixupConfigRules(configXoReact())];
+	return [...xoNext(options), ...xoReact()];
 }
 
 suite('options validation', () => {
 	for (const [description, options] of [
 		['bad config', {config: 'invalid'}],
-		['bad jsxA11yConfig', {jsxA11yConfig: 'invalid'}],
 		['bad rootDir', {rootDir: 123}],
 		['unexpected option', {unknown: true}],
 	]) {
 		test(`rejects ${description}`, () => {
 			assert.throws(
 				() => {
-					configXoNext(options);
+					xoNext(options);
 				},
 				{name: 'ArgumentError'},
 			);
@@ -74,50 +72,12 @@ suite('options validation', () => {
 	}
 });
 
-suite('jsx-a11y rules', () => {
-	test('next config is default', async () => {
+suite('jsx-a11y-x rules', () => {
+	test('next component mapping works', async () => {
 		const messages = await runEslint('<Image src="foo.jpg" />', config());
 
 		assert.ok(hasMessage(messages, {
-			ruleId: 'jsx-a11y/alt-text',
-			severity: severity.warn,
-		}));
-	});
-
-	suite('recommended config works', () => {
-		test('existing rules are overridden', async () => {
-			const messages = await runEslint(
-				'<Image src="foo.jpg" />',
-				config({jsxA11yConfig: 'recommended'}),
-			);
-
-			assert.ok(hasMessage(messages, {
-				ruleId: 'jsx-a11y/alt-text',
-				severity: severity.error,
-			}));
-		});
-
-		test('new rules are applied', async () => {
-			const messages = await runEslint(
-				'<a />',
-				config({jsxA11yConfig: 'recommended'}),
-			);
-
-			assert.ok(hasMessage(messages, {
-				ruleId: 'jsx-a11y/anchor-has-content',
-				severity: severity.error,
-			}));
-		});
-	});
-
-	test('strict config works', async () => {
-		const messages = await runEslint(
-			'<ul role="listbox" />',
-			config({jsxA11yConfig: 'strict'}),
-		);
-
-		assert.ok(hasMessage(messages, {
-			ruleId: 'jsx-a11y/no-noninteractive-element-to-interactive-role',
+			ruleId: 'jsx-a11y-x/alt-text',
 			severity: severity.error,
 		}));
 	});

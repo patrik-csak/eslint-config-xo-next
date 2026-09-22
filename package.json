@@ -60,7 +60,7 @@
 		"@types/eslint-plugin-jsx-a11y": "^6.10.1",
 		"@types/node": "^24.13.2",
 		"eslint": "^10.6.0",
-		"eslint-config-xo": "^2.0.0",
+		"eslint-config-xo": "^4.0.0",
 		"eslint-config-xo-react": "^0.31.0",
 		"typescript": "^6.0.3"
 	},

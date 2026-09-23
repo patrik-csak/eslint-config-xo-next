@@ -4,9 +4,13 @@ ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-confi
 
 ## Features
 
-- Eliminates ESLint plugin and parser conflicts from using ESLint 10 with `eslint-config-next` and `eslint-config-xo-react`
-- Combines Next.js's [`@next/next`](https://nextjs.org/docs/app/api-reference/config/eslint#rules) rules with `eslint-config-xo-react`'s stricter [`eslint-plugin-jsx-a11y-x`](https://github.com/es-tooling/eslint-plugin-jsx-a11y-x), [`@eslint-react/eslint-plugin`](https://github.com/Rel1cx/eslint-react), and [`eslint-plugin-react-hooks`](https://github.com/react/react/tree/HEAD/packages/eslint-plugin-react-hooks) rules
-- Supports Tailwind CSS syntax
+- Eliminates plugin and parser conflicts between ESLint 10, `eslint-config-next`, and `eslint-config-xo-react`
+- Allows you to combine [Next.js's rules](https://nextjs.org/docs/app/api-reference/config/eslint#rules) with XO's stricter React, accessibility, and hooks rules
+- Allows you to use XO's maintained ESLint plugins instead of Next.js's unmaintained plugins[^1]
+- Acts as a thin compatibility layer instead of depending on and wrapping Next.js or XO packages
+	- Your app's `@next/eslint-plugin-next` version can be kept in sync with `next` and other `@next/*` packages using `next upgrade` or `@next/codemod upgrade`
+	- You can update `eslint-config-xo` and `eslint-config-xo-react` without waiting for this config to update
+- Supports Tailwind CSS
 
 ## Install
 
@@ -90,8 +94,4 @@ const xoConfig = defineConfig([
 ]);
 ```
 
-## FAQ
-
-### How is this different from [eslint-config-xo-nextjs](https://github.com/tusbar/eslint-config-xo-nextjs)?
-
-This config acts as a minimal compatibility layer between Next.js's and XO's configs instead of wrapping them. With this config, you install your own version of `@next/eslint-plugin-next` so that its version matches your project's `next` and `@next/*` dependencies, and you install your own versions of `eslint-config-xo` (or `xo`) and `eslint-config-xo-react` so that you can update them without waiting for this config to update them.
+[^1]: `eslint-config-next` depends on `eslint-plugin-react` and `eslint-plugin-jsx-a11y`, which are unmaintained and incompatible with ESLint 10. `eslint-config-xo-react` uses `@eslint-react/eslint-plugin` and `eslint-plugin-jsx-a11y-x`.

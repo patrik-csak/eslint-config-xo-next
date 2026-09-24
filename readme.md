@@ -99,7 +99,7 @@ Below is a comparison of the plugins and enabled rule counts between `eslint-con
 
 | | `eslint-config-next` plugin | `eslint-config-next` rules | `eslint-config-xo-react` plugin | `eslint-config-xo-react` rules |
 |---|---|--:|---|--:|
-| **Next.js** | `@next/eslint-plugin-next` | 22 | **`@next/eslint-plugin-next`** | 22 |
+| **Next.js** | `@next/eslint-plugin-next` | 22 | `@next/eslint-plugin-next` | 22 |
 | **React** | `eslint-plugin-react` (unmaintained) | 22 | **`@eslint-react/eslint-plugin`** | **69** |
 | **Hooks** | `react-hooks` | 16 | `react-hooks` | **17** |
 | **Accessibility** | `jsx-a11y` (unmaintained) | 6 | **`jsx-a11y-x`** | **28** |

@@ -40,7 +40,7 @@ export default function xoNext(options?: Options): Linter.Config[] {
 	const config: Linter.Config[] = [
 		// Our own version of eslint-config-next's 'next' config object:
 		{
-			name: 'xo-next',
+			name: 'xo-next/base',
 
 			// Use next's files
 			files: ['**/*.{js,jsx,mjs,ts,tsx,mts,cts}'],
@@ -97,6 +97,7 @@ export default function xoNext(options?: Options): Linter.Config[] {
 
 		// Use next's ignores
 		{
+			name: 'xo-next/ignores',
 			ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
 		},
 	];

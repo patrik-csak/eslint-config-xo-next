@@ -4,8 +4,8 @@ ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-confi
 
 ## Features
 
-- Eliminates conflicts between ESLint 10, `eslint-config-next`, `eslint-config-xo-react`, and `eslint-config-xo`
-- Allows you to use [`eslint-config-next` rules](https://nextjs.org/docs/app/api-reference/config/eslint#rules) with the stricter React, hooks, accessibility and TypeScript rules of `eslint-config-xo-react` and `eslint-config-xo` (see [comparison](#comparison))
+- Allows you to use [`eslint-config-next` rules](https://nextjs.org/docs/app/api-reference/config/eslint#rules) with the stricter React, hooks, accessibility, and TypeScript rules of `eslint-config-xo-react` and `eslint-config-xo` (see [comparison](#comparison))
+- Eliminates conflicts between ESLint 10, `eslint-config-next`, `eslint-config-xo-react`, and `eslint-config-xo`. No need for `@eslint/compat`.
 - Acts as a thin compatibility layer instead of depending on Next.js or XO packages
 	- Your app’s `@next/eslint-plugin-next` can be kept in sync with its `next` and other `@next/*` packages using `next upgrade` or `@next/codemod upgrade`
 	- You can update `eslint-config-xo-react` and `eslint-config-xo` without waiting for this config to update

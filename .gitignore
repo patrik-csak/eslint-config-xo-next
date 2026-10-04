@@ -1,4 +1,4 @@
-index.d.ts
-index.js
-node_modules
+node_modules/
+config.d.ts
+config.js
 package-lock.json

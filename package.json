@@ -8,8 +8,8 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"types": "./index.d.ts",
-			"default": "./index.js"
+			"types": "./config.d.ts",
+			"default": "./config.js"
 		}
 	},
 	"sideEffects": false,
@@ -28,7 +28,7 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"inspect": "eslint-config-inspector --config=index.js",
+		"inspect": "eslint-config-inspector --config=config.js",
 		"lint": "eslint",
 		"prepack": "npm run build",
 		"pretest": "npm run build",
@@ -36,8 +36,8 @@
 		"test:coverage": "npm run test -- --experimental-test-coverage"
 	},
 	"files": [
-		"index.js",
-		"index.d.ts"
+		"config.js",
+		"config.d.ts"
 	],
 	"keywords": [
 		"eslint",

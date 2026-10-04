@@ -11,7 +11,7 @@ import {suite, test} from 'node:test';
 import {ESLint} from 'eslint';
 import xo from 'eslint-config-xo';
 import xoReact from 'eslint-config-xo-react';
-import xoNext from './index.js';
+import xoNext from './config.js';
 
 /**
 @typedef {import('eslint').Linter} Linter
@@ -51,7 +51,7 @@ const severity = {
 };
 
 /**
-@param {import('./index.js').Options} [options]
+@param {import('./config.js').Options} [options]
 @returns {Linter.Config[]}
 */
 function config(options) {

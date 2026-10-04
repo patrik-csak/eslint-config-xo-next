@@ -4,7 +4,7 @@ import xo from 'eslint-config-xo';
 // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/3813
 // eslint-disable-next-line unicorn/no-top-level-side-effects
 export default defineConfig([
-	globalIgnores(['index.d.ts', 'index.js']),
+	globalIgnores(['config.d.ts', 'config.js']),
 
 	...xo(),
 ]);

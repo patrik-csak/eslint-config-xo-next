@@ -51,9 +51,9 @@ const severity = {
 };
 
 /**
- @param {import('./index.js').Options} [options]
- @returns {Linter.Config[]}
- */
+@param {import('./index.js').Options} [options]
+@returns {Linter.Config[]}
+*/
 function config(options) {
 	return [...xo(), ...xoReact(), ...xoNext(options)];
 }

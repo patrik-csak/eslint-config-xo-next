@@ -65,9 +65,13 @@
 	"peerDependencies": {
 		"@next/eslint-plugin-next": "^16.0.0",
 		"eslint": "^10.0.0",
-		"eslint-config-xo-react": "^0.32.0"
+		"eslint-config-xo": ">=0.53.0",
+		"eslint-config-xo-react": ">=0.32.0"
 	},
 	"peerDependenciesMeta": {
+		"eslint-config-xo": {
+			"optional": true
+		},
 		"eslint-config-xo-react": {
 			"optional": true
 		}

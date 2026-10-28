@@ -4,16 +4,14 @@ ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-confi
 
 ## Features
 
-- Allows you to use [`eslint-config-next` rules](https://nextjs.org/docs/app/api-reference/config/eslint#rules) with the stricter React, hooks, accessibility, and TypeScript rules of `eslint-config-xo-react` and `eslint-config-xo` (see [comparison](#comparison))
-- Eliminates conflicts between ESLint 10, `eslint-config-next`, `eslint-config-xo-react`, and `eslint-config-xo`. No need for `@eslint/compat`.
-- Acts as a thin compatibility layer instead of depending on Next.js or XO packages
-	- Your app’s `@next/eslint-plugin-next` can be kept in sync with its `next` and other `@next/*` packages using `next upgrade` or `@next/codemod upgrade`
-	- You can update `eslint-config-xo-react` and `eslint-config-xo` without waiting for this config to update
+- Allows you to use eslint-config-xo-react with eslint-config-next without ESLint config or plugin conflicts
+- Works as a thin compatibility layer instead of depending on Next.js or XO packages
 - Supports Tailwind CSS
 
 ## Install
 
 ```sh
+npm uninstall eslint-config-next
 npm install --save-dev \
 	@next/eslint-plugin-next \
 	eslint-config-xo \
@@ -41,6 +39,7 @@ export default defineConfig([
 <summary>Use with <a href=https://github.com/xojs/xo>XO</a></summary>
 
 ```sh
+npm uninstall eslint-config-next
 npm install --save-dev \
 	@next/eslint-plugin-next \
 	eslint-config-xo-react \
@@ -95,7 +94,7 @@ eslintXoNext({rootDir: 'packages/my-app/'})
 
 ## Comparison
 
-Below is a comparison of the plugins and enabled rule counts between `eslint-config-next`  and `eslint-config-xo-react` (with `eslint-config-xo`)
+Below is a comparison of the plugins and enabled rule counts between `eslint-config-next` and `eslint-config-xo-react`
 
 | | `eslint-config-next` plugin | `eslint-config-next` rules | `eslint-config-xo-react` plugin | `eslint-config-xo-react` rules |
 |---|---|--:|---|--:|
@@ -110,7 +109,7 @@ Below is a comparison of the plugins and enabled rule counts between `eslint-con
 <details>
 <summary>Comparison package versions</summary>
 
-- `eslint-config-next`: 16.3.6
-- `eslint-config-xo-react`: 0.32.0
-- `eslint-config-xo`: 4.0.1
+- eslint-config-next: 16.4.3
+- eslint-config-xo-react: 0.32.0
+- eslint-config-xo: 7.0.0
 </details>
